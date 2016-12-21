@@ -1,26 +1,28 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Vue.js parts
-    var tracker = new Vue({
-      el: '#tracker',
-      data: {
-        message: 'Hello Vue!'
-      }
-    })
-
-    var fab = document.getElementById('new');
-    var newItem = document.getElementById('new-item');
-
-    if (!newItem.showModal) {
-        dialogPolyfill.registerDialog(newItem);
-    }
-
-    // Clicks on the main FAB
-    fab.addEventListener('click', function() {
-        newItem.showModal();
-    }, false);
-
-    // Clicks on the modal from the FAB
-    newItem.querySelector('.close').addEventListener('click', function() {
-        newItem.close();
+(function() {
+    Vue.component('characterInfo', {
+        template: '\
+            <tr>\
+                <td v-bind:characterInitiative="character"> {{ character.characterInitiative }} </td>\
+                <td> {{ character.characterName }} </td>\
+                <td> {{ character.characterHP }} </td>\
+                <td> <button v-on:click="$emit(\'remove\')">X</button></td>\
+            </tr>',
+        props: ['character']
     });
-});
+
+    var app = new Vue({
+        el: '#initiative-tracker',
+        data: {
+            characters: [{
+                characterInitiative: '1',
+                characterName: 'ginger',
+                characterHP: '9000'
+            },
+            {
+                characterInitiative: '1',
+                characterName: 'ginger',
+                characterHP: '900'
+            }]
+        }
+    })
+})()

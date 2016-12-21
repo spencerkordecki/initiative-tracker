@@ -3,39 +3,33 @@
     <head>
         <meta charset="utf-8">
         <title>Initiative Tracker</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.red-indigo.min.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.5/dialog-polyfill.min.css" />
         <link rel="stylesheet" href="css/index.css">
-        <script type="text/javascript" src=https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.5/dialog-polyfill.min.js></script>
-        <script src="https://unpkg.com/vue/dist/vue.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
     </head>
     <body>
-        <dialog id="new-item" class="mdl-dialog">
-          <div class="mdl-dialog__content">
-              <form action="#">
-                <div class="mdl-textfield mdl-js-textfield">
-                  <input class="mdl-textfield__input" type="text" id="new-character-name">
-                  <label class="mdl-textfield__label" for="new-character-name">Character Name</label>
-                </div>
-              </form>
-          </div>
-          <div class="mdl-dialog__actions">
-            <button type="button" class="mdl-button close">Confirm</button>
-            <button type="button" class="mdl-button close">Cancel</button>
-          </div>
-        </dialog>
-        <div id="tracker" class="mdl-grid">
-            <div class="mdl-cell mdl-card mdl-shadow--4dp">
-                <div class="mdl-card__title">
-                    {{ message }}
-                </div>
-            </div>
-        </div>
-        <button id="new" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-          <i class="material-icons">add</i>
-        </button>
+        <section>
+            <header>
+                <h1>Initative Tracker</h1>
+            </header>
+        </section>
+        <section id="initiative-tracker">
+            <table>
+                <tr>
+                    <th>Initiative</th>
+                    <th>Player / Enemy Name</th>
+                    <th>Hit Points</th>
+                    <th>Remove</th>
+                </tr>
+                <tr is="characterInfo" v-for="(character, index) in characters" v-bind:character="character">
+                </tr>
+                <tr>
+                    <td><input type="number" name="" value=""></td>
+                    <td><input type="text" name="" value=""></td>
+                    <td><input type="number" name="" value=""></td>
+                    <td><button>O</button></td>
+                </tr>
+            </table>
+        </section>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
