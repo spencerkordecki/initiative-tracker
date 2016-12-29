@@ -11,23 +11,20 @@
                 <h1>Initative Tracker</h1>
             </header>
         </section>
-        <section id="initiative-tracker">
-            <table>
-                <tr>
-                    <th>Initiative</th>
-                    <th>Player / Enemy Name</th>
-                    <th>Hit Points</th>
-                    <th>Remove</th>
-                </tr>
-                <tr is="characterInfo" v-for="(character, index) in characters" v-bind:character="character">
-                </tr>
-                <tr>
-                    <td><input type="number" name="" value=""></td>
-                    <td><input type="text" name="" value=""></td>
-                    <td><input type="number" name="" value=""></td>
-                    <td><button>O</button></td>
-                </tr>
-            </table>
+        <section id="initiative-tracker" class="table">
+            <div class="tr">
+                <span class="th td">Initiative</span>
+                <span class="th td">Player / Enemy Name</span>
+                <span class="th td">Hit Points</span>
+                <span class="th td">Remove</span>
+            </div>
+            <div is="characterInfo" v-for="(character, index) in characters" v-bind:character="character"></div>
+            <form class="tr" v-on:submit.prevent="newCharacter">
+                <span class="td"><input type="number" v-model="characters.characterInitiative"></span>
+                <span class="td"><input type="text" v-model="characters.characterName"></span>
+                <span class="td"><input type="number" v-model="characters.characterHP"></span>
+                <span class="td"><input type="submit" name="" value="0"></span>
+            </form>
         </section>
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
         <script type="text/javascript" src="js/index.js"></script>

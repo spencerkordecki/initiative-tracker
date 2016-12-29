@@ -1,0 +1,16 @@
+section.table {
+    display: table;
+}
+
+form.tr, div.tr {
+    display: table-row;
+}
+
+span.td {
+    display: table-cell;
+}
+
+span.th {
+    text-align: center;
+    font-weight: bold;
+}

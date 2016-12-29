@@ -1,28 +1,28 @@
 (function() {
     Vue.component('characterInfo', {
         template: '\
-            <tr>\
-                <td v-bind:characterInitiative="character"> {{ character.characterInitiative }} </td>\
-                <td> {{ character.characterName }} </td>\
-                <td> {{ character.characterHP }} </td>\
-                <td> <button v-on:click="$emit(\'remove\')">X</button></td>\
-            </tr>',
+            <div class="tr">\
+                <span class="td"> {{ character.characterInitiative }} </span>\
+                <span class="td"> {{ character.characterName }} </span>\
+                <span class="td"> {{ character.characterHP }} </span>\
+                <span class="td"> <button v-on:click="$emit(\'remove\')">X</button></span>\
+            </div>',
         props: ['character']
     });
 
     var app = new Vue({
         el: '#initiative-tracker',
         data: {
-            characters: [{
-                characterInitiative: '1',
-                characterName: 'ginger',
-                characterHP: '9000'
-            },
-            {
-                characterInitiative: '1',
-                characterName: 'ginger',
-                characterHP: '900'
-            }]
+            characters: []
+        },
+        methods: {
+            newCharacter: function() {
+                this.characters.push({
+                    characterInitiative: this.characters.characterInitiative,
+                    characterName: this.characters.characterName,
+                    characterHP: this.characters.characterHP
+                });
+            }
         }
     })
 })()
