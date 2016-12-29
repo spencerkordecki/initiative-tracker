@@ -14,3 +14,11 @@ span.th {
     text-align: center;
     font-weight: bold;
 }
+
+.center-align {
+    text-align: center;
+}
+
+.input-error {
+    border: 1px solid red;
+}
