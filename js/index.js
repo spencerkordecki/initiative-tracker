@@ -1,11 +1,15 @@
 (function() {
     Vue.component('characterInfo', {
         template: '\
-            <div class="tr center-align">\
-                <span class="td"> {{ character.characterInitiative }} </span>\
-                <span class="td"> {{ character.characterName }} </span>\
-                <span class="td"> {{ character.characterHP }} </span>\
-                <span class="td"> <button @click="$emit(\'remove\')">X</button></span>\
+            <div class="mdl-grid tracker-max-width">\
+                <span class="mdl-cell mdl-cell--3-col center-align"> {{ character.characterInitiative }} </span>\
+                <span class="mdl-cell mdl-cell--3-col center-align"> {{ character.characterName }} </span>\
+                <span class="mdl-cell mdl-cell--3-col center-align"> {{ character.characterHP }} </span>\
+                <span class="mdl-cell mdl-cell--3-col center-align">\
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" @click="$emit(\'remove\')">\
+                        REMOVE\
+                    </button>\
+                </span>\
             </div>',
         props: ['character']
     });

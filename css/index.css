@@ -1,18 +1,14 @@
-section.table {
-    display: table;
+body {
+    width: 100%;
 }
 
-form.tr, div.tr {
-    display: table-row;
+#initiative-tracker, .tracker-max-width {
+    max-width: 960px;
+    width: 100%;
 }
 
-span.td {
-    display: table-cell;
-}
-
-span.th {
-    text-align: center;
-    font-weight: bold;
+#initiative-tracker div.mdl-grid:nth-child(even) {
+    background-color: #e0e0e0;
 }
 
 .center-align {
@@ -21,4 +17,13 @@ span.th {
 
 .input-error {
     border: 1px solid red;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* OVERWRITES */
+.mdl-grid {
+    align-items: center !important;
 }
