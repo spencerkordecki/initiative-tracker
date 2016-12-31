@@ -43,6 +43,16 @@
             },
             removeCharacter: function(index) {
                 this.characters.splice(index, 1);
+            },
+            sort: function(column) {
+                if (this.characters.length) {
+                    return this.characters.sort(function(a, b) {
+                        var x = a[column];
+                        var y = b[column];
+
+                        return (x === y ? 0 : x > y ? 1 : -1);
+                    });
+                }
             }
         }
     })

@@ -23,7 +23,15 @@ body {
     font-weight: bold;
 }
 
+.sortable {
+    cursor: pointer;
+}
+
 /* OVERWRITES */
 .mdl-grid {
     align-items: center !important;
+}
+
+.mdl-cell .material-icons {
+    vertical-align: middle;
 }
