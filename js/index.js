@@ -1,4 +1,5 @@
 (function() {
+    // Create the template for the individual characters' information in the table
     Vue.component('characterInfo', {
         template: '\
             <div class="mdl-grid tracker-max-width">\
@@ -17,16 +18,18 @@
     var app = new Vue({
         el: '#initiative-tracker',
         data: {
-            characters: []
+            characters: [], // Initialize the empty data
+            sortOrder: '-1' // Determines how to sort the data
         },
         methods: {
+            // Adds a new character to the table
             newCharacter: function() {
                 var initiative, characterName, characterHP;
                 initiative = this.characters.characterInitiative;
                 characterName = this.characters.characterName;
                 characterHP = this.characters.characterHP;
 
-                if (!initiative || !characterName || !characterHP) {
+                if (!initiative || !characterName || !characterHP) { // Check to make sure all fields have been filled out
                     console.log('all fields plz.');
                 }
                 else {
@@ -41,16 +44,20 @@
                     this.characters.characterHP = '';
                 }
             },
+            // Removes a character from the table
             removeCharacter: function(index) {
                 this.characters.splice(index, 1);
             },
+            // Sorts the table in ascending or descending order upon clicking on the header
             sort: function(column) {
-                if (this.characters.length) {
+                if (this.characters.length) { // Check that there is information to sort
+                    this.sortOrder *= -1;
+                    var order = this.sortOrder;
+
                     return this.characters.sort(function(a, b) {
                         var x = a[column];
                         var y = b[column];
-
-                        return (x === y ? 0 : x > y ? 1 : -1);
+                        return (x === y ? 0 : x > y ? 1 : -1) * order;
                     });
                 }
             }
