@@ -33,10 +33,18 @@
                     console.log('all fields plz.');
                 }
                 else {
+                    // Add the new character
                     this.characters.push({
                         characterInitiative: this.characters.characterInitiative,
                         characterName: this.characters.characterName,
                         characterHP: this.characters.characterHP
+                    });
+
+                    // Sort the array with the new character to preserve the low-high order
+                    this.characters.sort(function(a, b) {
+                        var x = parseInt(a['characterInitiative'], 10);
+                        var y = parseInt(b['characterInitiative'], 10);
+                        return (x === y ? 0 : x > y ? 1 : -1);
                     });
 
                     this.characters.characterInitiative = '';
@@ -55,8 +63,8 @@
                     var order = this.sortOrder;
 
                     return this.characters.sort(function(a, b) {
-                        var x = a[column];
-                        var y = b[column];
+                        var x = parseInt(a[column], 10);
+                        var y = parseInt(b[column], 10);
                         return (x === y ? 0 : x > y ? 1 : -1) * order;
                     });
                 }
