@@ -5,7 +5,7 @@
         <title>Initiative Tracker</title>
         <link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-red.min.css" />
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-red.min.css" />
     </head>
     <body>
         <section>
@@ -16,25 +16,25 @@
         <section id="initiative-tracker" class="mdl-grid tracker-max-width">
             <div class="mdl-grid tracker-max-width">
                 <span class="mdl-cell mdl-cell--3-col center-align bold sortable" @click="sort('characterInitiative')">Initiative<span class="arrow" :class="sortOrder === -1 ? 'asc' : 'dsc'"></span></span>
-                <span class="mdl-cell mdl-cell--3-col center-align bold sortable">Player / Enemy Name</span>
-                <span class="mdl-cell mdl-cell--3-col center-align bold sortable">Hit Points</span>
+                <span class="mdl-cell mdl-cell--3-col center-align bold">Player / Enemy Name</span>
+                <span class="mdl-cell mdl-cell--3-col center-align bold">Hit Points</span>
                 <span class="mdl-cell mdl-cell--3-col center-align bold">Remove</span>
             </div>
             <div is="characterInfo" v-for="(character, index) in characters" v-bind:character="character" v-on:remove="removeCharacter(index)"></div>
 
             <form class="mdl-grid tracker-max-width" v-on:submit.prevent="newCharacter">
                 <div class="mdl-cell mdl-cell--3-col center-align mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" v-model="characters.characterInitiative" id="initiative" pattern="-?[0-9]*(\.[0-9]+)?" autocomplete="off">
+                    <input class="mdl-textfield__input" type="text" v-model="characters.characterInitiative" id="initiative" pattern="^[0-9]{1,2}$" autocomplete="off">
                     <label class="mdl-textfield__label" for="initiative">Initiative</label>
                     <span class="mdl-textfield__error">Please enter a number.</span>
                 </div>
                 <div class="mdl-cell mdl-cell--3-col center-align mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                     <input class="mdl-textfield__input" type="text" v-model="characters.characterName" id="name" autocomplete="off">
-                    <label class="mdl-textfield__label" for="initiative">Name</label>
+                    <label class="mdl-textfield__label" for="name">Name</label>
                 </div>
                 <div class="mdl-cell mdl-cell--3-col center-align mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" v-model="characters.characterHP" id="hit-points" pattern="-?[0-9]*(\.[0-9]+)?" autocomplete="off">
-                    <label class="mdl-textfield__label" for="initiative">Hit Points</label>
+                    <input class="mdl-textfield__input" type="text" v-model="characters.characterHP" id="hit-points" pattern="^[0-9]{1,2,3}$" autocomplete="off">
+                    <label class="mdl-textfield__label" for="hit-points">Hit Points</label>
                     <span class="mdl-textfield__error">Please enter a number.</span>
                 </div>
                 <div class="mdl-cell mdl-cell--3-col center-align">
@@ -45,7 +45,7 @@
             </form>
         </section>
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
-        <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+        <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
