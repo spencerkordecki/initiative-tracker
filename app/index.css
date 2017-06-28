@@ -6,4 +6,11 @@ body {
     max-width: 900px;
     width: 100%;
     margin: 0 auto;
+    margin-top: 50px;
+    padding: 10px;
+}
+
+/* OVERRIDES */
+.table th, .table td {
+    text-align: center
 }

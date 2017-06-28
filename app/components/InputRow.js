@@ -4,17 +4,30 @@ var classNames = require('classnames');
 require('bulma/css/bulma.css');
 require('../index.css');
 
+const initialState = {
+    'initiative' : '',
+    'characterName': '',
+    'health': '',
+    'completed': ''
+}
+
 class InputRow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             'initiative' : '',
             'characterName': '',
-            'health': ''
+            'health': '',
+            'completed': ''
         }
 
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.reset = this.reset.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentWillUpdate(nextProps, nextState) {
+        nextState.completed = !!(nextState.initiative && nextState.characterName && nextState.health);
     }
 
     handleInputChange(event) {
@@ -27,6 +40,11 @@ class InputRow extends React.Component {
         });
     }
 
+    reset() {
+        this.setState(initialState);
+        console.log('reset');
+    }
+
     handleSubmit(event) {
         event.preventDefault();
 
@@ -35,6 +53,8 @@ class InputRow extends React.Component {
             this.state.characterName,
             this.state.health
         );
+
+        this.reset();
     }
 
     render() {
@@ -46,7 +66,9 @@ class InputRow extends React.Component {
                             <input 
                                 name="initiative" 
                                 className="input" 
-                                type="number" 
+                                type="number"
+                                placeholder="Initiative"
+                                value={this.state.initiative} 
                                 onChange={this.handleInputChange}>
                             </input>
                         </p>
@@ -58,7 +80,9 @@ class InputRow extends React.Component {
                             <input 
                                 name="characterName" 
                                 className="input" 
-                                type="text" 
+                                type="text"
+                                placeholder="Character Name" 
+                                value={this.state.characterName}
                                 onChange={this.handleInputChange}>
                             </input>
                         </p>
@@ -70,7 +94,9 @@ class InputRow extends React.Component {
                             <input 
                                 name="health" 
                                 className="input" 
-                                type="number" 
+                                type="number"
+                                placeholder="Health" 
+                                value={this.state.health}
                                 onChange={this.handleInputChange}>
                             </input>
                         </p>
@@ -79,7 +105,8 @@ class InputRow extends React.Component {
                 <div className="column">
                     <button
                         type="submit"
-                        className={classNames("button", "is-primary")}>Add</button>
+                        className={classNames("button", "is-primary")}
+                        disabled={!this.state.completed}>Add</button>
                 </div>
             </div>
         </form>
