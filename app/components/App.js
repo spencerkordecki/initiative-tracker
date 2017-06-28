@@ -12,7 +12,7 @@ class App extends React.Component {
 
         this.state = {
             characters: []
-        }
+        };
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.removeRow = this.removeRow.bind(this);
@@ -37,7 +37,6 @@ class App extends React.Component {
 
     handleSort(key, event) {
         var characters = [...this.state.characters];
-        console.log(key);
         switch(key) {
             case 'characterName':
                 characters.sort(function(a, b) {
@@ -55,7 +54,6 @@ class App extends React.Component {
                 });
                 break;
         }
-        console.log(characters);
         this.setState({characters});
     }
 
