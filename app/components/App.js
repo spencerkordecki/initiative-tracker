@@ -15,6 +15,7 @@ class App extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.removeRow = this.removeRow.bind(this);
     }
 
     handleSubmit(initiative, characterName, health) {
@@ -27,14 +28,29 @@ class App extends React.Component {
         });
     }
 
+    removeRow(index, event) {
+        var characters = [...this.state.characters];
+        characters.splice(index, 1);
+        this.setState({characters});
+    }
+
     render() {
         return <div className="app">
             <table className={classNames("table", "is-striped")}>
                 <Header />
                 <tbody>
                     {this.state.characters.map(function(character, index) {
-                        return <Row key={index} info={character}/>
-                    })}
+                        return <tr key={index}>
+                            <td>{character.initiative}</td>
+                            <td>{character.characterName}</td>
+                            <td>{character.health}</td>
+                            <td>
+                                <a 
+                                    className={classNames("button", "is-danger", "is-small")}
+                                    onClick={this.removeRow.bind(this, index)}>X</a>
+                            </td>
+                        </tr>
+                    }, this)}
                 </tbody>
             </table>
             <InputRow onSubmit={this.handleSubmit}/>

@@ -42,7 +42,6 @@ class InputRow extends React.Component {
 
     reset() {
         this.setState(initialState);
-        console.log('reset');
     }
 
     handleSubmit(event) {
