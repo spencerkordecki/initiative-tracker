@@ -1,2 +1,11 @@
-# initiative-tracker
-Keeps track of current initiatives in D&amp;D 5E. 
+### To install
+
+`yarn install`
+
+### To build
+
+`yarn run webpack`
+
+### To run
+
+`yarn run start`
