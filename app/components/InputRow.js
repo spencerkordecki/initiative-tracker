@@ -58,22 +58,8 @@ class InputRow extends React.Component {
 
     render() {
         return <form onSubmit={this.handleSubmit}>
-            <div className="columns">
-                <div className="column">
-                    <div className="field">
-                        <p className="control">
-                            <input 
-                                name="initiative" 
-                                className="input" 
-                                type="number"
-                                placeholder="Initiative"
-                                value={this.state.initiative} 
-                                onChange={this.handleInputChange}>
-                            </input>
-                        </p>
-                    </div>
-                </div>
-                <div className="column">
+            <div className="columns is-multiline is-mobile">
+                <div className="column is-6-desktop is-6-tablet is-12-mobile">
                     <div className="field">
                         <p className="control">
                             <input 
@@ -87,7 +73,21 @@ class InputRow extends React.Component {
                         </p>
                     </div>
                 </div>
-                <div className="column">
+                <div className="column is-2-desktop is-2-tablet is-6-mobile">
+                    <div className="field">
+                        <p className="control">
+                            <input 
+                                name="initiative" 
+                                className="input" 
+                                type="number"
+                                placeholder="Initiative"
+                                value={this.state.initiative} 
+                                onChange={this.handleInputChange}>
+                            </input>
+                        </p>
+                    </div>
+                </div>
+                <div className="column is-2-desktop is-2-tablet is-6-mobile">
                     <div className="field">
                         <p className="control">
                             <input 
@@ -101,10 +101,10 @@ class InputRow extends React.Component {
                         </p>
                     </div>
                 </div>
-                <div className="column">
+                <div className="column is-2-desktop is-2-tablet">
                     <button
                         type="submit"
-                        className={classNames("button", "is-primary")}
+                        className={classNames("button", "is-primary", "is-fullwidth")}
                         disabled={!this.state.completed}>Add</button>
                 </div>
             </div>

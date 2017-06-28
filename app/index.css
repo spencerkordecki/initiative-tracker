@@ -12,5 +12,16 @@ body {
 
 /* OVERRIDES */
 .table th, .table td {
-    text-align: center
+    text-align: center;
+}
+
+.table th {
+    cursor: pointer;
+}
+
+.table td {
+    max-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
