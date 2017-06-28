@@ -10,11 +10,21 @@ class App extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            characters: []
+        }
+
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(initiative, characterName, health) {
-        console.log(initiative);
+        this.setState(function() {
+            this.state.characters.push({
+                initiative: initiative,
+                characterName: characterName,
+                health: health
+            });
+        });
     }
 
     render() {
@@ -22,7 +32,9 @@ class App extends React.Component {
             <table className={classNames("table", "is-striped")}>
                 <Header />
                 <tbody>
-                    <Row />
+                    {this.state.characters.map(function(character, index) {
+                        return <Row key={index} info={character}/>
+                    })}
                 </tbody>
             </table>
             <InputRow onSubmit={this.handleSubmit}/>

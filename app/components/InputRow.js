@@ -58,7 +58,7 @@ class InputRow extends React.Component {
                             <input 
                                 name="characterName" 
                                 className="input" 
-                                type="number" 
+                                type="text" 
                                 onChange={this.handleInputChange}>
                             </input>
                         </p>

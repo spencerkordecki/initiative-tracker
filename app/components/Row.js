@@ -6,11 +6,6 @@ require('../index.css');
 class Row extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            'intiative': '',
-            'character-name': '',
-            'health': ''
-        };
 
         this.removeRow = this.removeRow.bind(this);
     }
@@ -21,9 +16,9 @@ class Row extends React.Component {
 
     render() {
         return <tr>
-            <td>{this.state.intiative}</td>
-            <td>{this.state.character-name}</td>
-            <td>{this.state.health}</td>
+            <td>{this.props.info.initiative}</td>
+            <td>{this.props.info.characterName}</td>
+            <td>{this.props.info.health}</td>
             <td>
                 <a 
                     className={classNames("button", "is-danger")}
