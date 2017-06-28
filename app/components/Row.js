@@ -21,7 +21,7 @@ class Row extends React.Component {
             <td>{this.props.info.health}</td>
             <td>
                 <a 
-                    className={classNames("button", "is-danger")}
+                    className={classNames("button", "is-danger", "is-small")}
                     onClick={this.removeRow}>X</a>
             </td>
         </tr>
