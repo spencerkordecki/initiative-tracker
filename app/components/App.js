@@ -7,6 +7,16 @@ require('bulma/css/bulma.css');
 require('../index.css');
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit(initiative, characterName, health) {
+        console.log(initiative);
+    }
+
     render() {
         return <div className="app">
             <table className={classNames("table", "is-striped")}>
@@ -14,10 +24,8 @@ class App extends React.Component {
                 <tbody>
                     <Row />
                 </tbody>
-                <tfoot>
-                    <InputRow />
-                </tfoot>
             </table>
+            <InputRow onSubmit={this.handleSubmit}/>
         </div>
     }
 }

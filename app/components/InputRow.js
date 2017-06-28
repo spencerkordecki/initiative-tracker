@@ -1,4 +1,5 @@
 var React = require('react');
+var PropTypes = require('prop-types');
 var classNames = require('classnames');
 require('bulma/css/bulma.css');
 require('../index.css');
@@ -8,7 +9,7 @@ class InputRow extends React.Component {
         super(props);
         this.state = {
             'initiative' : '',
-            'character-name': '',
+            'characterName': '',
             'health': ''
         }
 
@@ -27,54 +28,66 @@ class InputRow extends React.Component {
     }
 
     handleSubmit(event) {
-        console.log(this.state);
+        event.preventDefault();
+
+        this.props.onSubmit(
+            this.state.initiative,
+            this.state.characterName,
+            this.state.health
+        );
     }
 
     render() {
-        return <tr>
-            <td>
-                <div className="field">
-                    <p className="control">
-                        <input 
-                            name="initiative" 
-                            className="input" 
-                            type="number" 
-                            onChange={this.handleInputChange}>
-                        </input>
-                    </p>
+        return <form onSubmit={this.handleSubmit}>
+            <div className="columns">
+                <div className="column">
+                    <div className="field">
+                        <p className="control">
+                            <input 
+                                name="initiative" 
+                                className="input" 
+                                type="number" 
+                                onChange={this.handleInputChange}>
+                            </input>
+                        </p>
+                    </div>
                 </div>
-            </td>
-            <td>
-                <div className="field">
-                    <p className="control">
-                        <input 
-                            name="character-name" 
-                            className="input" 
-                            type="text" 
-                            onChange={this.handleInputChange}>
-                        </input>
-                    </p>
+                <div className="column">
+                    <div className="field">
+                        <p className="control">
+                            <input 
+                                name="characterName" 
+                                className="input" 
+                                type="number" 
+                                onChange={this.handleInputChange}>
+                            </input>
+                        </p>
+                    </div>
                 </div>
-            </td>
-            <td>
-                <div className="field">
-                    <p className="control">
-                        <input 
-                            name="health" 
-                            className="input" 
-                            type="number" 
-                            onChange={this.handleInputChange}>
-                        </input>
-                    </p>
+                <div className="column">
+                    <div className="field">
+                        <p className="control">
+                            <input 
+                                name="health" 
+                                className="input" 
+                                type="number" 
+                                onChange={this.handleInputChange}>
+                            </input>
+                        </p>
+                    </div>
                 </div>
-            </td>
-            <td>
-                <a 
-                    className={classNames("button", "is-primary")}
-                    onClick={this.handleSubmit}>Add</a>
-            </td>
-        </tr>
+                <div className="column">
+                    <button
+                        type="submit"
+                        className={classNames("button", "is-primary")}>Add</button>
+                </div>
+            </div>
+        </form>
     }
+}
+
+InputRow.propTypes = {
+    onSubmit: PropTypes.func.isRequired
 }
 
 module.exports = InputRow;
