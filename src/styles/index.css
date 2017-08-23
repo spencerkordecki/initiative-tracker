@@ -1,5 +1,13 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.grid-header, .grid-row, .grid-input-row {
+	display: flex;
+}
+
+.grid-cell {
+	flex: 1;
 }

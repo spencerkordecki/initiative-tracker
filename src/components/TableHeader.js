@@ -1,9 +1,22 @@
 import React, { Component } from 'react';
 
-class TableHeader extends React.Component {
+class TableHeader extends Component {
     render() {
         return (
-            <h1></h1>
+            <div className="grid-header">
+                <div className="grid-cell">
+                    <span>Character Name</span>
+                </div>
+                <div className="grid-cell">
+                    <span>Initiative</span>
+                </div>
+                <div className="grid-cell">
+                    <span>Hit Points</span>
+                </div>
+                <div className="grid-cell">
+                    <span>Remove</span>
+                </div>
+            </div>
         );
     }
 }
