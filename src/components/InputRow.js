@@ -33,11 +33,11 @@ class InputRow extends Component {
     handleSubmit(event) {
         event.preventDefault();
 
-        /*this.props.onSubmit(
+        this.props.onSubmit(
             this.state.characterName,
             this.state.initiative,
             this.state.hitPoints
-        );*/
+        );
 
         this.reset();
     }
