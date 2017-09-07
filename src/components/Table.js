@@ -21,15 +21,19 @@ class Table extends Component {
     }
 
     render() {
+        console.log(this.state.characters);
+
         return (
             <div className="grid-container">
                 <TableHeader />
                 {this.state.characters.map(function(character, index) {
                     return <TableRow 
-                        key={index}
+                        key={character.characterName}
+                        index={index}
                         characterName={character.characterName}
                         initiative={character.initiative}
-                        hitPoints={character.hitPoints} />
+                        hitPoints={character.hitPoints}
+                        onClick={this.props.removeCharacter} />
                 }, this)}
             </div>
         );

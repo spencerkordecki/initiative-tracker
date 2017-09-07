@@ -13,6 +13,7 @@ class App extends Component {
 
 		this.state = initialState;
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.removeCharacter = this.removeCharacter.bind(this);
 	}
 
 	handleSubmit(characterName, initiative, hitPoints) {
@@ -25,11 +26,18 @@ class App extends Component {
 		});
 	}
 
+	removeCharacter(index, event) {
+		let characters = [...this.state.characters];
+		characters.splice(index, 1);
+		this.setState({characters});
+	}
+
 	render() {
 		return (
     		<div className="App">
     			<Table 
-					characters={this.state.characters} />
+					characters={this.state.characters}
+					removeCharacter={this.removeCharacter} />
     			<InputRow 
 					onSubmit={this.handleSubmit} />
     		</div>

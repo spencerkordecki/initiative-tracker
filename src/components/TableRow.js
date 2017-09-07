@@ -1,26 +1,23 @@
 import React, { Component } from 'react';
 
-const initialState = {
-    'characterName': '',
-    'initiative': '',
-    'hitPoints': ''
-}
-
 class TableRow extends Component {
     constructor(props) {
         super(props);
 
-        console.log(props);
-
-        this.state = initialState;
-    }
-
-    componentWillMount() {
-        this.setState({
+        this.state = {
+            index: this.props.index,
             characterName: this.props.characterName,
             initiative: this.props.initiative,
             hitPoints: this.props.hitPoints
-        });
+        }
+
+        this.remove = this.remove.bind(this);
+    }
+
+    remove(event) {
+        event.preventDefault();
+
+        this.props.onClick(this.state.index);
     }
 
     render() {
@@ -36,7 +33,8 @@ class TableRow extends Component {
                     <span>{this.state.hitPoints}</span>
                 </div>
                 <div className="grid-cell">
-                    <span>X</span>
+                    <button
+                        onClick={this.remove}>X</button>
                 </div>
             </div>
         );
