@@ -18,10 +18,14 @@ The application requires the user to have a player's initiative, health, and nam
 
 Clone the repo and use the command `yarn install`.
 
-### To build
-
-The command `yarn run webpack` will build the application for production putting the production files in the `dist/` folder. 
-
 ### To run
 
 The command `yarn run start` will run the application on localhost with hot reload on save.
+
+### To test
+
+The command `yarn run test` will run all `*.test.js` files.
+
+### To build
+
+The command `yarn run build` will build the application for production.
