@@ -21,8 +21,6 @@ class Table extends Component {
     }
 
     render() {
-        console.log(this.state.characters);
-
         return (
             <div className="grid-container">
                 <TableHeader />

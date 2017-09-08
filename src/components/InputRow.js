@@ -18,6 +18,10 @@ class InputRow extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    validate() {
+        // TODO: check all fields are filled out for use in submit
+    }
+
     reset() {
         this.setState(initialState);
     }
