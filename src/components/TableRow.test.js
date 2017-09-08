@@ -1,8 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import TableRow from './TableRow';
+import { shallow } from 'enzyme';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<TableRow />, div);
+	shallow(<TableRow />);
+});
+
+it('initializes with character info', () => {
+	const wrapper = shallow(
+		<TableRow 
+			index="0"
+			characterName="character one"
+			initiative="11"
+			hitPoints="14" />);
+	const expectedState = {
+		index: '0',
+		characterName: 'character one',
+		initiative: '11',
+		hitPoints: '14'
+	};
+
+	expect(wrapper.state()).toEqual(expectedState);
 });

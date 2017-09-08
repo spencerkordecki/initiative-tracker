@@ -25,7 +25,7 @@ it('resets its state', () => {
 		'initiative': '11',
 		'hitPoints': '15',
 		'completed': 'true'
-	}
+	};
 	const expectedState = {
 		'characterName': '',
 		'initiative': '',
