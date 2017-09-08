@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import InputRow from '../components/InputRow';
 import Table from '../components/Table';
 import '../styles/index.css';
+import 'bulma/css/bulma.css';
 
 const initialState = {
 	'characters': []
@@ -34,10 +35,11 @@ class App extends Component {
 
 	render() {
 		return (
-    		<div className="App">
+    		<div className="app">
     			<Table 
 					characters={this.state.characters}
 					removeCharacter={this.removeCharacter} />
+				<hr />
     			<InputRow 
 					onSubmit={this.handleSubmit} />
     		</div>

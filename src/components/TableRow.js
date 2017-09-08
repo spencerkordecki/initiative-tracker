@@ -22,18 +22,19 @@ class TableRow extends Component {
 
     render() {
         return (
-            <div className="grid-row">
-                <div className="grid-cell">
+            <div className="columns is-mobile">
+                <div className="column is-one-quarter">
                     <span>{this.state.characterName}</span>
                 </div>
-                <div className="grid-cell">
+                <div className="column is-one-quarter">
                     <span>{this.state.initiative}</span>
                 </div>
-                <div className="grid-cell">
+                <div className="column is-one-quarter">
                     <span>{this.state.hitPoints}</span>
                 </div>
-                <div className="grid-cell">
+                <div className="column is-one-quarter">
                     <button
+                        className="button is-danger is-small"
                         onClick={this.remove}>X</button>
                 </div>
             </div>

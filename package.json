@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "http://spencerkordecki.github.io/initiative-tracker",
   "dependencies": {
-    "bulma": "^0.4.3",
+    "bulma": "^0.5.1",
     "enzyme": "^2.9.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

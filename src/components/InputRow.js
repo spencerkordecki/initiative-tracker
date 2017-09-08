@@ -49,33 +49,48 @@ class InputRow extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <div className="grid-input-row">
-                    <div className="grid-cell">
-                        <input
-                            name="characterName"
-                            type="text"
-                            placeholder="Character Name"
-                            value={this.state.characterName}
-                            onChange={this.handleInputChange}></input>
+                <div className="columns is-multiline is-mobile has-text-centered">
+                    <div className="column is-6-desktop is-6-tablet is-12-mobile">
+                        <div className="field">
+                            <p className="control">
+                                <input
+                                    className="input"
+                                    name="characterName"
+                                    type="text"
+                                    placeholder="Character Name"
+                                    value={this.state.characterName}
+                                    onChange={this.handleInputChange}></input>
+                            </p>
+                        </div>
                     </div>
-                    <div className="grid-cell">
-                        <input
-                            name="initiative"
-                            type="number"
-                            placeholder="Initiative"
-                            value={this.state.initiative}
-                            onChange={this.handleInputChange}></input>
+                    <div className="column is-2-desktop is-2-tablet is-6-mobile">
+                        <div className="field">
+                            <p className="control">
+                                <input
+                                    className="input"
+                                    name="initiative"
+                                    type="number"
+                                    placeholder="Initiative"
+                                    value={this.state.initiative}
+                                    onChange={this.handleInputChange}></input>
+                            </p>
+                        </div>
                     </div>
-                    <div className="grid-cell">
-                        <input
-                            name="hitPoints"
-                            type="number"
-                            placeholder="Hit Points"
-                            value={this.state.hitPoints}
-                            onChange={this.handleInputChange}></input>
+                    <div className="column is-2-desktop is-2-tablet is-6-mobile">
+                        <div className="field">
+                            <p className="control">
+                                <input
+                                    className="input"
+                                    name="hitPoints"
+                                    type="number"
+                                    placeholder="Hit Points"
+                                    value={this.state.hitPoints}
+                                    onChange={this.handleInputChange}></input>
+                            </p>
+                        </div>
                     </div>
-                    <div className="grid-cell">
-                        <button>Submit</button>
+                    <div className="column is-2-desktop is-2-tablet">
+                        <button className="button is-primary is-fullwidth">Submit</button>
                     </div>
                 </div>
             </form>

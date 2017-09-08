@@ -22,7 +22,7 @@ class Table extends Component {
 
     render() {
         return (
-            <div className="grid-container">
+            <div className="has-text-centered">
                 <TableHeader />
                 {this.state.characters.map(function(character, index) {
                     return <TableRow 

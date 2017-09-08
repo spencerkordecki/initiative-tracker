@@ -1,13 +1,20 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    width: 100%;
 }
 
-.grid-header, .grid-row, .grid-input-row {
-	display: flex;
+.app {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 10px;
 }
 
-.grid-cell {
-	flex: 1;
+/* OVERRIDES */
+.column {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
