@@ -1,5 +1,7 @@
 # Initiative Tracker
 
+[![CircleCI](https://circleci.com/gh/spencerkordecki/initiative-tracker/tree/master.svg?style=svg)](https://circleci.com/gh/spencerkordecki/initiative-tracker/tree/master)
+
 ## Link
 
 https://spencerkordecki.github.io/initiative-tracker
