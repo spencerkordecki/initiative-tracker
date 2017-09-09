@@ -11,8 +11,7 @@ it('initializes with an empty state', () => {
 	const expectedState = {
 		'characterName': '',
 		'initiative': '',
-		'hitPoints': '',
-		'completed': ''
+		'hitPoints': ''
 	};
 
 	expect(wrapper.state()).toEqual(expectedState);
@@ -23,14 +22,12 @@ it('resets its state', () => {
 	const initialState = {
 		'characterName': 'character one',
 		'initiative': '11',
-		'hitPoints': '15',
-		'completed': 'true'
+		'hitPoints': '15'
 	};
 	const expectedState = {
 		'characterName': '',
 		'initiative': '',
-		'hitPoints': '',
-		'completed': ''
+		'hitPoints': ''
 	};
 
 	wrapper.setState(initialState);
@@ -79,7 +76,7 @@ it('is not completed until all fields are filled out', () => {
 		value: 'new character' 
 	}});
 
-	expect(wrapper.state().completed).toEqual('');
+	expect(wrapper.instance().validate()).toEqual(false);
 });
 
 it('accepts all inputs and updates state', () => {
@@ -87,8 +84,7 @@ it('accepts all inputs and updates state', () => {
 	const expectedState = {
 		'characterName': 'character one',
 		'initiative': '11',
-		'hitPoints': '15',
-		'completed': ''
+		'hitPoints': '15'
 	}
 
 	wrapper.find('input[name="characterName"]').simulate('change', { target: { 
@@ -104,5 +100,6 @@ it('accepts all inputs and updates state', () => {
 		value: '15' 
 	}});
 	
+	expect(wrapper.instance().validate()).toEqual(true);
 	expect(wrapper.state()).toEqual(expectedState);
 });
