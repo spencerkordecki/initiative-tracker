@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 const initialState = {
     'characterName': '',
     'initiative': '',
-    'hitPoints': '',
-    'completed': ''
+    'hitPoints': ''
 };
 
 class InputRow extends Component {
@@ -13,13 +12,18 @@ class InputRow extends Component {
 
         this.state = initialState;
         
+        this.validate = this.validate.bind(this);
         this.reset = this.reset.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     validate() {
-        // TODO: check all fields are filled out for use in submit
+        for (var keys in this.state) {
+            if (!this.state[keys]) return false;
+        }
+
+        return true;
     }
 
     reset() {
@@ -37,16 +41,20 @@ class InputRow extends Component {
     handleSubmit(event) {
         event.preventDefault();
 
-        this.props.onSubmit(
-            this.state.characterName,
-            this.state.initiative,
-            this.state.hitPoints
-        );
-
-        this.reset();
+        if (this.validate()) {
+            this.props.onSubmit(
+                this.state.characterName,
+                this.state.initiative,
+                this.state.hitPoints
+            );
+    
+            this.reset();
+        }
     }
 
     render() {
+        const isCompleted = this.validate();
+
         return (
             <form onSubmit={this.handleSubmit}>
                 <div className="columns is-multiline is-mobile has-text-centered">
@@ -90,7 +98,9 @@ class InputRow extends Component {
                         </div>
                     </div>
                     <div className="column is-2-desktop is-2-tablet">
-                        <button className="button is-primary is-fullwidth">Submit</button>
+                        <button 
+                            className="button is-primary is-fullwidth"
+                            disabled={!isCompleted}>Submit</button>
                     </div>
                 </div>
             </form>
