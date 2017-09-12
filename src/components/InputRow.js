@@ -11,26 +11,21 @@ class InputRow extends Component {
         super(props);
 
         this.state = initialState;
-        
-        this.validate = this.validate.bind(this);
-        this.reset = this.reset.bind(this);
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    validate() {
+    validate = () => {
         for (var keys in this.state) {
             if (!this.state[keys]) return false;
         }
 
         return true;
-    }
+    };
 
-    reset() {
+    reset = () => {
         this.setState(initialState);
     }
 
-    handleInputChange(event) {
+    handleInputChange = (event) => {
         const target = event.target;
 
         this.setState({
@@ -38,7 +33,7 @@ class InputRow extends Component {
         });
     }
 
-    handleSubmit(event) {
+    handleSubmit = (event) => {
         event.preventDefault();
 
         if (this.validate()) {

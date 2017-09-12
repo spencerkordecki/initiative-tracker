@@ -13,11 +13,9 @@ class App extends Component {
 		super(props);
 
 		this.state = initialState;
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.removeCharacter = this.removeCharacter.bind(this);
 	}
 
-	handleSubmit(characterName, initiative, hitPoints) {
+	handleSubmit = (characterName, initiative, hitPoints) => {
 		this.setState({
 			characters: [...this.state.characters, {
 				characterName: characterName,
@@ -27,7 +25,7 @@ class App extends Component {
 		});
 	}
 
-	removeCharacter(index, event) {
+	removeCharacter = (index, event) => {
 		let characters = [...this.state.characters];
 		characters.splice(index, 1);
 		this.setState({characters});
