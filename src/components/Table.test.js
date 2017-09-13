@@ -25,11 +25,53 @@ it('creates a table row for each character', () => {
 			'characterName': 'character three',
 			'initiative': '4',
 			'hitPoints': '67'
-		},]
+		}]
 	};
 
 	expect(wrapper.state()).toEqual(initialState);
 
 	wrapper.setState(newState);
 	expect(wrapper.find(TableRow)).toHaveLength(3);
+});
+
+it('sorts the characters by their initiative', () => {
+	const wrapper = shallow(<Table />);
+	const initialState = {
+		'characters': []
+	};
+	const newState = {
+		'characters': [{
+			'characterName': 'character one',
+			'initiative': '14',
+			'hitPoints': '23'
+		}, {
+			'characterName': 'character two',
+			'initiative': '18',
+			'hitPoints': '54'
+		}, {
+			'characterName': 'character three',
+			'initiative': '4',
+			'hitPoints': '67'
+		}]
+	};
+	const expectedState = {
+		'characters': [{
+			'characterName': 'character three',
+			'initiative': '4',
+			'hitPoints': '67'
+		}, {
+			'characterName': 'character one',
+			'initiative': '14',
+			'hitPoints': '23'
+		}, {
+			'characterName': 'character two',
+			'initiative': '18',
+			'hitPoints': '54'
+		}]
+	};
+
+	expect(wrapper.state()).toEqual(initialState);
+
+	wrapper.setState(newState);
+	expect(wrapper.state()).toEqual(expectedState);
 });
