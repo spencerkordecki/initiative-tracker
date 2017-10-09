@@ -1214,8 +1214,8 @@ builtin-status-codes@^3.0.0:
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
 
 bulma@^0.5.1:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.5.2.tgz#b5c4695075700b9539619555840d8f4f9f84b3a5"
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.5.3.tgz#be93afb6246192505c30df3f9c1c29a97d319a13"
 
 bytes@2.5.0:
   version "2.5.0"
@@ -5199,8 +5199,8 @@ react-dev-utils@^3.0.2, react-dev-utils@^3.1.0:
     text-table "0.2.0"
 
 react-dom@^15.6.1:
-  version "15.6.1"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.1.tgz#2cb0ed4191038e53c209eb3a79a23e2a4cf99470"
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.2.tgz#41cfadf693b757faf2708443a1d1fd5a02bef730"
   dependencies:
     fbjs "^0.8.9"
     loose-envify "^1.1.0"
@@ -5262,15 +5262,15 @@ react-scripts@1.0.10:
     fsevents "1.1.2"
 
 react-test-renderer@^15.6.1:
-  version "15.6.1"
-  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-15.6.1.tgz#026f4a5bb5552661fd2cc4bbcd0d4bc8a35ebf7e"
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-15.6.2.tgz#d0333434fc2c438092696ca770da5ed48037efa8"
   dependencies:
     fbjs "^0.8.9"
     object-assign "^4.1.0"
 
 react@^15.6.1:
-  version "15.6.1"
-  resolved "https://registry.yarnpkg.com/react/-/react-15.6.1.tgz#baa8434ec6780bde997cdc380b79cd33b96393df"
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-15.6.2.tgz#dba0434ab439cfe82f108f0f511663908179aa72"
   dependencies:
     create-react-class "^15.6.0"
     fbjs "^0.8.9"
