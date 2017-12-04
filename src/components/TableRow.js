@@ -13,7 +13,7 @@ const TableRow = ({
     }
 
     return (
-        <div className="columns is-mobile">
+        <div className="columns is-mobile table-row">
             <div className="column is-one-quarter">
                 <span>{characterName}</span>
             </div>
