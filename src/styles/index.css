@@ -1,3 +1,7 @@
+html {
+    height: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -5,14 +9,28 @@ body {
 }
 
 .app {
+    background-color: #efefef;
     max-width: 900px;
     width: 100%;
     margin: 0 auto;
     margin-top: 50px;
     padding: 10px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 2px 3px #ccc;
+    -moz-box-shadow: 0 2px 3px #ccc;
+    box-shadow: 0 2px 3px #ccc;
+    overflow: hidden;
+}
+
+.table-row:nth-child(even) {
+    background-color: #cdcdcd;
 }
 
 /* OVERRIDES */
+html {
+    background-color: #99d3df !important;
+}
+
 .column {
     text-overflow: ellipsis;
     white-space: nowrap;
