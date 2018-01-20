@@ -84,7 +84,7 @@ it('is not completed until all fields are filled out', () => {
     }
   });
 
-  expect(wrapper.instance().validate()).toEqual(false);
+  expect(wrapper.instance().isComplete()).toEqual(false);
 });
 
 it('accepts all inputs and updates state', () => {
@@ -114,6 +114,6 @@ it('accepts all inputs and updates state', () => {
     }
   });
 
-  expect(wrapper.instance().validate()).toEqual(true);
+  expect(wrapper.instance().isComplete()).toEqual(true);
   expect(wrapper.state()).toEqual(expectedState);
 });

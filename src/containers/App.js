@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import InputRow from '../components/InputRow';
 import Table from '../components/Table';
-import '../styles/index.css';
+import '../styles/index.scss';
 
 const initialState = {
   characters: []
