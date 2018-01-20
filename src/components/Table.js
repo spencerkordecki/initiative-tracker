@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import TableHeader from './TableHeader';
 import TableRow from './TableRow';
-import '../styles/index.css';
 
 const initialState = {
   characters: []
