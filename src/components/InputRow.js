@@ -13,7 +13,7 @@ class InputRow extends Component {
     this.state = initialState;
   }
 
-  validate = () => {
+  isComplete = () => {
     for (var keys in this.state) {
       if (!this.state[keys]) return false;
     }
@@ -25,18 +25,23 @@ class InputRow extends Component {
     this.setState(initialState);
   };
 
-  handleInputChange = event => {
-    const target = event.target;
+  handleNumericalInputChange = event => {
+    const exp = /^[0-9\b]+$/;
+    if (event.target.value === '' || exp.test(event.target.value)) {
+      this.handleInputChange(event);
+    }
+  };
 
+  handleInputChange = event => {
     this.setState({
-      [target.name]: target.value
+      [event.target.name]: event.target.value
     });
   };
 
   handleSubmit = event => {
     event.preventDefault();
 
-    if (this.validate()) {
+    if (this.isComplete()) {
       this.props.onSubmit(
         this.state.characterName,
         this.state.initiative,
@@ -48,7 +53,7 @@ class InputRow extends Component {
   };
 
   render() {
-    const isCompleted = this.validate();
+    const isCompleted = this.isComplete();
 
     return (
       <form onSubmit={this.handleSubmit}>
@@ -73,10 +78,9 @@ class InputRow extends Component {
                 <input
                   className="input"
                   name="initiative"
-                  type="number"
                   placeholder="Initiative"
                   value={this.state.initiative}
-                  onChange={this.handleInputChange}
+                  onChange={this.handleNumericalInputChange}
                 />
               </p>
             </div>
@@ -87,10 +91,9 @@ class InputRow extends Component {
                 <input
                   className="input"
                   name="hitPoints"
-                  type="number"
                   placeholder="Hit Points"
                   value={this.state.hitPoints}
-                  onChange={this.handleInputChange}
+                  onChange={this.handleNumericalInputChange}
                 />
               </p>
             </div>
