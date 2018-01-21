@@ -14,6 +14,9 @@ class App extends Component {
     this.state = initialState;
   }
 
+  /**
+   * Adds a character to the app's state based on the parameters passed in.
+   */
   handleSubmit = (characterName, initiative, hitPoints) => {
     this.setState({
       characters: [
@@ -27,6 +30,10 @@ class App extends Component {
     });
   };
 
+  /**
+   * Removes a character from the table based on the character's index from where the
+   * button was clicked.
+   */
   removeCharacter = (index, event) => {
     let characters = [...this.state.characters];
     characters.splice(index, 1);

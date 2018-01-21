@@ -13,6 +13,9 @@ class InputRow extends Component {
     this.state = initialState;
   }
 
+  /**
+   * Checks to make sure all of the inputs have been filled out; used before submitting the row.
+   */
   isComplete = () => {
     for (var keys in this.state) {
       if (!this.state[keys]) return false;
@@ -21,10 +24,17 @@ class InputRow extends Component {
     return true;
   };
 
+  /**
+   * Resets the input fields to their initial, empty state.
+   */
   reset = () => {
     this.setState(initialState);
   };
 
+  /**
+   * Ensures that only numerical values are inputted to the fields that require only numbers,
+   * such as initiative and health.
+   */
   handleNumericalInputChange = event => {
     const exp = /^[0-9\b]+$/;
     if (event.target.value === '' || exp.test(event.target.value)) {
@@ -32,12 +42,21 @@ class InputRow extends Component {
     }
   };
 
+  /**
+   * Updates the state with the value that is inputted to the input field when onChange
+   * fires.
+   */
   handleInputChange = event => {
     this.setState({
       [event.target.name]: event.target.value
     });
   };
 
+  /**
+   * Fires the onSubmit function that is passed to InputRow if all of the fields are
+   * completed so the app's state can be updated with the new character; resets the state
+   * after submission.
+   */
   handleSubmit = event => {
     event.preventDefault();
 
