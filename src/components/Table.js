@@ -21,7 +21,7 @@ class Table extends Component {
 
   render() {
     return (
-      <div className="has-text-centered">
+      <div className="card has-text-centered is-size-7-touch">
         <TableHeader />
         {this.state.characters
           .sort(function(a, b) {

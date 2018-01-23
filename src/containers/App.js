@@ -43,12 +43,12 @@ class App extends Component {
   render() {
     return (
       <div className="app">
+        <InputRow onSubmit={this.handleSubmit} />
+        <br />
         <Table
           characters={this.state.characters}
           removeCharacter={this.removeCharacter}
         />
-        <hr />
-        <InputRow onSubmit={this.handleSubmit} />
       </div>
     );
   }

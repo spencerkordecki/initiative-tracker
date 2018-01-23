@@ -75,57 +75,59 @@ class InputRow extends Component {
     const isCompleted = this.isComplete();
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="columns is-multiline is-mobile has-text-centered">
-          <div className="column is-6-desktop is-6-tablet is-12-mobile">
-            <div className="field">
-              <p className="control">
-                <input
-                  className="input"
-                  name="characterName"
-                  type="text"
-                  placeholder="Character Name"
-                  value={this.state.characterName}
-                  onChange={this.handleInputChange}
-                />
-              </p>
+      <div className="card input-row">
+        <form className="card-content" onSubmit={this.handleSubmit}>
+          <div className="columns is-multiline is-mobile has-text-centered">
+            <div className="column is-6-desktop is-6-tablet is-12-mobile">
+              <div className="field">
+                <p className="control">
+                  <input
+                    className="input"
+                    name="characterName"
+                    type="text"
+                    placeholder="Character Name"
+                    value={this.state.characterName}
+                    onChange={this.handleInputChange}
+                  />
+                </p>
+              </div>
+            </div>
+            <div className="column is-2-desktop is-2-tablet is-6-mobile">
+              <div className="field">
+                <p className="control">
+                  <input
+                    className="input"
+                    name="initiative"
+                    placeholder="Initiative"
+                    value={this.state.initiative}
+                    onChange={this.handleNumericalInputChange}
+                  />
+                </p>
+              </div>
+            </div>
+            <div className="column is-2-desktop is-2-tablet is-6-mobile">
+              <div className="field">
+                <p className="control">
+                  <input
+                    className="input"
+                    name="hitPoints"
+                    placeholder="Hit Points"
+                    value={this.state.hitPoints}
+                    onChange={this.handleNumericalInputChange}
+                  />
+                </p>
+              </div>
+            </div>
+            <div className="column is-2-desktop is-2-tablet">
+              <button
+                className="button is-primary is-fullwidth"
+                disabled={!isCompleted}>
+                Submit
+              </button>
             </div>
           </div>
-          <div className="column is-2-desktop is-2-tablet is-6-mobile">
-            <div className="field">
-              <p className="control">
-                <input
-                  className="input"
-                  name="initiative"
-                  placeholder="Initiative"
-                  value={this.state.initiative}
-                  onChange={this.handleNumericalInputChange}
-                />
-              </p>
-            </div>
-          </div>
-          <div className="column is-2-desktop is-2-tablet is-6-mobile">
-            <div className="field">
-              <p className="control">
-                <input
-                  className="input"
-                  name="hitPoints"
-                  placeholder="Hit Points"
-                  value={this.state.hitPoints}
-                  onChange={this.handleNumericalInputChange}
-                />
-              </p>
-            </div>
-          </div>
-          <div className="column is-2-desktop is-2-tablet">
-            <button
-              className="button is-primary is-fullwidth"
-              disabled={!isCompleted}>
-              Submit
-            </button>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     );
   }
 }
