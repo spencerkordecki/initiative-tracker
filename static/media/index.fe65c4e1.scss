@@ -1,0 +1,43 @@
+@import 'bulma/sass/utilities/initial-variables.sass';
+
+$primary: #8a4fff;
+
+@import 'bulma/bulma.sass';
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+}
+
+.app {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+  overflow: visible;
+}
+
+.table-row:nth-child(even) {
+  background-color: #e5ecf4;
+  background-clip: padding-box;
+}
+
+.input-row {
+  margin-bottom: 20px;
+}
+
+/* OVERRIDES */
+html {
+  background-color: #effffa !important;
+}
+
+.column {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
