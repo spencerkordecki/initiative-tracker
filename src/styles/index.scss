@@ -1,6 +1,6 @@
 @import 'bulma/sass/utilities/initial-variables.sass';
 
-$primary: #8a4fff;
+$primary: #507dbc;
 
 @import 'bulma/bulma.sass';
 
@@ -23,7 +23,7 @@ body {
 }
 
 .table-row:nth-child(even) {
-  background-color: #e5ecf4;
+  background-color: #f7f0f0;
   background-clip: padding-box;
 }
 
@@ -33,7 +33,7 @@ body {
 
 /* OVERRIDES */
 html {
-  background-color: #effffa !important;
+  background-color: #fbfbff !important;
 }
 
 .column {
