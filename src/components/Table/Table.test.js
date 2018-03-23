@@ -1,5 +1,5 @@
 import React from 'react';
-import Table from './Table';
+import Table from '../Table';
 import TableRow from './TableRow';
 import { shallow } from 'enzyme';
 
@@ -65,9 +65,9 @@ it('sorts the characters by their initiative', () => {
   const expectedState = {
     characters: [
       {
-        characterName: 'character three',
-        initiative: '4',
-        hitPoints: '67'
+        characterName: 'character two',
+        initiative: '18',
+        hitPoints: '54'
       },
       {
         characterName: 'character one',
@@ -75,9 +75,9 @@ it('sorts the characters by their initiative', () => {
         hitPoints: '23'
       },
       {
-        characterName: 'character two',
-        initiative: '18',
-        hitPoints: '54'
+        characterName: 'character three',
+        initiative: '4',
+        hitPoints: '67'
       }
     ]
   };

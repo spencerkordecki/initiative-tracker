@@ -1,5 +1,5 @@
 import React from 'react';
-import InputRow from './InputRow';
+import InputRow from '../InputRow';
 import { shallow } from 'enzyme';
 
 it('renders without crashing', () => {

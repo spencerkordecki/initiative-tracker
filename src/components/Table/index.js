@@ -26,7 +26,7 @@ class Table extends Component {
         {this.state.characters
           .sort(function(a, b) {
             const difference =
-              parseInt(a.initiative, 10) - parseInt(b.initiative, 10);
+              parseInt(b.initiative, 10) - parseInt(a.initiative, 10);
 
             if (difference === 0) {
               return a.characterName.localeCompare(b.characterName);
